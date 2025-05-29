@@ -1,0 +1,218 @@
+
+
+/* Ajustes para telas muito pequenas (abaixo de 400px) */
+@media (max-width: 400px) {
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .service-card {
+        padding: 30px 20px;
+    }
+    
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    .footer h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Ajustes para tablets em modo retrato */
+@media (min-width: 768px) and (max-width: 991px) {
+    .hero .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .hero-image {
+        height: 350px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Ajustes para dispositivos em orientação paisagem */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: 450px;
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    #menu {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Ajustes para telas de alta resolução */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .hero-content h2 {
+        font-size: 3.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Ajustes para melhorar a experiência de toque em dispositivos móveis */
+@media (max-width: 768px) {
+    .btn, 
+    .filter-btn,
+    .portfolio-link,
+    .social-icons a,
+    #back-to-top {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 15px;
+        font-size: 16px; /* Evita zoom automático em iOS */
+    }
+    
+    /* Espaçamento maior para links no menu mobile para facilitar o toque */
+    #menu a {
+        padding: 15px 0;
+    }
+}
+
+/* Ajustes para impressão */
+@media print {
+    #header,
+    #back-to-top,
+    .hero-buttons,
+    .portfolio-filter,
+    .contact-form,
+    .footer-newsletter,
+    .footer-bottom-links {
+        display: none !important;
+    }
+    
+    body {
+        color: black;
+        background: white;
+    }
+    
+    section {
+        padding: 20px 0;
+        page-break-inside: avoid;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        font-weight: normal;
+    }
+}
+
+/* Ajustes para modo escuro do sistema */
+@media (prefers-color-scheme: dark) {
+    body.dark-mode-support {
+        --light-color: #121212;
+        --dark-color: #f8f9fa;
+        --gray-light: #2d2d2d;
+        background-color: var(--light-color);
+        color: var(--dark-color);
+    }
+    
+    body.dark-mode-support #header {
+        background-color: rgba(18, 18, 18, 0.95);
+    }
+    
+    body.dark-mode-support .service-card,
+    body.dark-mode-support .testimonial-item,
+    body.dark-mode-support .contact-form {
+        background-color: #1e1e1e;
+    }
+    
+    body.dark-mode-support .form-group input,
+    body.dark-mode-support .form-group textarea {
+        background-color: #2d2d2d;
+        border-color: #3d3d3d;
+        color: #f8f9fa;
+    }
+}
+
+/* Ajustes para animações mais suaves */
+.animate {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajustes para melhorar a acessibilidade de foco */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+/* Ajustes para garantir contraste adequado */
+.service-card:hover p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Ajustes para melhorar a experiência em dispositivos com tela sensível ao toque */
+@media (hover: none) {
+    .service-card:hover,
+    .portfolio-item:hover,
+    .social-icons a:hover,
+    .btn:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .portfolio-overlay {
+        opacity: 1;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7));
+    }
+}
